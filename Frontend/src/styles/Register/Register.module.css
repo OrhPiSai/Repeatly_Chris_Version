@@ -1,0 +1,84 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: white;
+}
+
+.registerBox {
+  width: 350px;
+  padding: 30px;
+  border: 1px solid black;
+  border-radius: 8px;
+  text-align: center;
+  background: #fff;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  font-family: "Arial", sans-serif;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.label {
+  text-align: left;
+  font-weight: bold;
+}
+
+.input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: all 0.2s ease-in-out;
+}
+
+.input:focus {
+  border-color: #000;
+  outline: none;
+  transform: scale(1.02);
+}
+
+/* Error Message */
+.error {
+  color: red;
+  font-size: 14px;
+}
+
+/* Register Button */
+.registerButton {
+  background-color: teal;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  margin-top: 10px;
+}
+
+.registerButton:hover {
+  background-color: #007b7b;
+}
+
+.registerButton:disabled {
+  background-color: grey;
+  cursor: not-allowed;
+}

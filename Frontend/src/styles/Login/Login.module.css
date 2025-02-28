@@ -1,0 +1,135 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: white;
+}
+
+.loginBox {
+  width: 350px;
+  padding: 30px;
+  border: 1px solid black;
+  border-radius: 8px;
+  text-align: center;
+  background: #fff;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  font-family: "Arial", sans-serif;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.label {
+  text-align: left;
+  font-weight: bold;
+}
+
+.input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: all 0.2s ease-in-out;
+}
+
+.input:focus {
+  border-color: #000;
+  outline: none;
+  transform: scale(1.02);
+}
+
+/* Forgot Password Section */
+.forgotPassword {
+  text-align: right;
+}
+
+.forgotPasswordButton {
+  font-size: 12px;
+  color: gray;
+  background: none;
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+}
+
+.forgotPasswordButton:hover {
+  color: blue;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+}
+
+/* Login Button */
+.loginButton {
+  background-color: yellow;
+  color: black;
+  font-weight: bold;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.loginButton:hover {
+  background-color: gold;
+}
+
+.loginButton:disabled {
+  background-color: grey;
+  cursor: not-allowed;
+}
+
+/* Register Button */
+.registerButton {
+  background-color: teal;
+  color: white;
+  font-weight: bold;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.registerButton:hover {
+  background-color: #007b7b;
+}
+
+/* Change Password Button */
+.changePasswordButton {
+  background-color: darkblue;
+  color: white;
+  font-weight: bold;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.changePasswordButton:hover {
+  background-color: navy;
+}

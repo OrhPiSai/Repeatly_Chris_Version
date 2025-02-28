@@ -1,0 +1,9 @@
+-- Create TagMapping Table
+CREATE TABLE "TagMapping" (
+    "TagID" INTEGER NOT NULL,         -- Links tags to activities/tasks
+    "ActivityID" INTEGER,             -- Links activities to tags
+    "TaskID" INTEGER,                 -- Links tasks to tags
+    CONSTRAINT fk_tagmapping_tag FOREIGN KEY ("TagID") REFERENCES "Tag"("TagID") ON DELETE CASCADE,
+    CONSTRAINT fk_tagmapping_activity FOREIGN KEY ("ActivityID") REFERENCES "Activity"("ActivityID") ON DELETE CASCADE,
+    CONSTRAINT fk_tagmapping_task FOREIGN KEY ("TaskID") REFERENCES "Task"("TaskID") ON DELETE CASCADE
+);

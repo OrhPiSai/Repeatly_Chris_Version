@@ -1,0 +1,30 @@
+-- Create the ProjectCycleMapping Table
+CREATE TABLE "ProjectCycleMapping" (
+    "ProjectID" INTEGER NOT NULL,  -- Links project to cycles
+    "CycleID" INTEGER NOT NULL,    -- Links cycle to projects
+    "UserID" INTEGER NOT NULL,     -- User responsible for the mapping
+    "OrderIndex" INTEGER NOT NULL DEFAULT 0, -- Determines the order of cycles in the project timeline
+    CONSTRAINT pk_projectcycle PRIMARY KEY ("ProjectID", "CycleID"),
+    CONSTRAINT fk_project FOREIGN KEY ("ProjectID") REFERENCES "Project"("ProjectID") ON DELETE CASCADE,
+    CONSTRAINT fk_cycle FOREIGN KEY ("CycleID") REFERENCES "Cycle"("CycleID") ON DELETE CASCADE,
+    CONSTRAINT fk_user FOREIGN KEY ("UserID") REFERENCES "User"("UserID")
+);
+
+-- Ensure OrderIndex starts at 0 and auto-increments correctly when new cycles are added to a project
+CREATE OR REPLACE FUNCTION update_cycle_order_index()
+RETURNS TRIGGER AS $$
+BEGIN
+    -- Find the highest OrderIndex in the project and set the new cycle to be the last
+    NEW."OrderIndex" := COALESCE(
+        (SELECT MAX("OrderIndex") + 1 FROM "ProjectCycleMapping" WHERE "ProjectID" = NEW."ProjectID"),
+        0
+    );
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Attach trigger to assign the next available OrderIndex when inserting a new cycle into a project
+CREATE TRIGGER set_order_index_before_insert
+BEFORE INSERT ON "ProjectCycleMapping"
+FOR EACH ROW
+EXECUTE FUNCTION update_cycle_order_index();

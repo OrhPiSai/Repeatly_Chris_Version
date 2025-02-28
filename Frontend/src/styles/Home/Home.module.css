@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  height: 100vh;
+  background-color: white;
+}
+
+/* Main Content */
+.content {
+  flex-grow: 1;
+  padding: 20px;
+  margin-left: 200px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.projectDropdown {
+  padding: 5px;
+  border-radius: 5px;
+}

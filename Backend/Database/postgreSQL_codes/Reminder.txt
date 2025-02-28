@@ -1,0 +1,28 @@
+-- Create the "Reminder" table
+CREATE TABLE "Reminder" (
+    "ReminderID" SERIAL PRIMARY KEY,                   -- Unique identifier for reminders
+    "RDescription" TEXT,                                -- Description of the reminder (nullable)
+    "DestEmail" TEXT NOT NULL,                          -- Email address to send reminder
+    "Time" TIMESTAMP NOT NULL,                          -- Time of reminder
+    "TimeFormat" INTEGER NOT NULL,                      -- Format of reminder time
+    "DaysBeforeDue" INTEGER NOT NULL,                   -- Days before task is due
+    "RecurrenceCount" INTEGER,                          -- Number of times to repeat (nullable)
+    "RecurrenceInterval" INTEGER,                       -- Interval between repetitions (nullable)
+    "CreatedAt" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,    -- Timestamp when the reminder was created
+    "UpdatedAt" TIMESTAMP DEFAULT CURRENT_TIMESTAMP     -- Initial timestamp for the last update
+);
+
+-- Create trigger function to auto-update the "UpdatedAt" column on row modification
+CREATE OR REPLACE FUNCTION update_reminder_updated_at_column()
+RETURNS TRIGGER AS $$
+BEGIN
+    NEW."UpdatedAt" = CURRENT_TIMESTAMP;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Attach the trigger function to the "Reminder" table so it updates "UpdatedAt" on each update
+CREATE TRIGGER set_reminder_timestamp
+BEFORE UPDATE ON "Reminder"
+FOR EACH ROW
+EXECUTE FUNCTION update_reminder_updated_at_column();

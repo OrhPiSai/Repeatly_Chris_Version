@@ -1,0 +1,9 @@
+-- Create ReminderMapping Table
+CREATE TABLE "ReminderMapping" (
+    "ReminderID" INTEGER NOT NULL,         -- Links reminder to activities/tasks
+    "ActivityID" INTEGER,                  -- Links reminder to activity (if applicable)
+    "TaskID" INTEGER,                      -- Links reminder to task (if applicable)
+    CONSTRAINT fk_remindermapping_reminder FOREIGN KEY ("ReminderID") REFERENCES "Reminder"("ReminderID") ON DELETE CASCADE,
+    CONSTRAINT fk_remindermapping_activity FOREIGN KEY ("ActivityID") REFERENCES "Activity"("ActivityID") ON DELETE CASCADE,
+    CONSTRAINT fk_remindermapping_task FOREIGN KEY ("TaskID") REFERENCES "Task"("TaskID") ON DELETE CASCADE
+);

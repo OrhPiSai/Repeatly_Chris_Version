@@ -1,0 +1,67 @@
+.calendarContainer {
+  margin-top: 20px;
+}
+
+.calendarHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.calendarCell {
+  padding: 10px;
+  border: 1px solid grey;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.taskIndicator {
+  background: yellow;
+  border-radius: 50%;
+  padding: 5px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 12px;
+}
+
+/* Task Pop-Up */
+.taskPopup {
+  position: fixed;
+  background: white;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 5px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.taskPopup h4 {
+  margin-bottom: 10px;
+}
+
+.taskItem {
+  padding: 5px;
+  border-radius: 5px;
+  background: yellow;
+  margin-bottom: 5px;
+}
+
+/* Close Button */
+.closePopup {
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+}

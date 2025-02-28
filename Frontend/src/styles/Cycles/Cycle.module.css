@@ -1,0 +1,78 @@
+.container {
+  display: flex;
+  height: 100vh;
+  background-color: white;
+}
+
+/* Main Content */
+.content {
+  flex-grow: 1;
+  padding: 20px;
+  margin-left: 200px;
+}
+
+/* Header Section */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.searchBar {
+  padding: 8px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 250px;
+}
+
+.searchBar:focus {
+  border-color: purple;
+  outline: none;
+  transform: scale(1.02);
+}
+
+/* Table */
+.tableContainer {
+  margin-top: 10px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: left;
+}
+
+.noCycles {
+  text-align: center;
+  padding: 20px;
+  color: grey;
+}
+
+/* Create Cycle Button */
+.buttonContainer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.createCycleButton {
+  background-color: orange;
+  color: black;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.createCycleButton:hover {
+  background-color: darkorange;
+}

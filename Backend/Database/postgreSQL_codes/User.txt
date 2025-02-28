@@ -1,0 +1,25 @@
+-- Create the "User" table
+CREATE TABLE "User" (
+    "UserID" SERIAL PRIMARY KEY,                      -- Unique identifier for users
+    "Fname" TEXT NOT NULL,                             -- User's first name
+    "LName" TEXT NOT NULL,                             -- User's last name
+    "Email" TEXT NOT NULL UNIQUE,                      -- Unique email for authentication
+    "Password" TEXT NOT NULL,                          -- Hashed password for authentication
+    "CreatedAt" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,   -- Timestamp when the user was created
+    "UpdatedAt" TIMESTAMP DEFAULT CURRENT_TIMESTAMP    -- Timestamp of the last update (initial value)
+);
+
+-- Create trigger function to auto-update the "UpdatedAt" column on row modification
+CREATE OR REPLACE FUNCTION update_updated_at_column()
+RETURNS TRIGGER AS $$
+BEGIN
+    NEW."UpdatedAt" = CURRENT_TIMESTAMP;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Attach the trigger function to the "User" table so that it fires before each update
+CREATE TRIGGER set_timestamp
+BEFORE UPDATE ON "User"
+FOR EACH ROW
+EXECUTE FUNCTION update_updated_at_column();

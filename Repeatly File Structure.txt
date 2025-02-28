@@ -1,0 +1,118 @@
+Repeatly/
+  ├── docker-compose.yml
+  ├── git/
+  ├── Frontend/
+  │    ├── src/
+  │    │    ├── context/
+  │    │    │    ├── AuthContext.js
+  │    │    ├── api/
+  │    │    │    ├── cycleApi.js
+  │    │    │    ├── activityApi.js
+  │    │    │    ├── reminderApi.js
+  │    │    │    ├── reminderMappingApi.js
+  │    │    │    ├── taskApi.js
+  │    │    │    ├── projectApi.js
+  │    │    │    ├── projectCycleMappingApi.js
+  │    │    │    ├── tagApi.js
+  │    │    │    ├── tagMappingApi.js
+  │    │    │    ├── userApi.js
+  │    │    ├── components/
+  │    │    │    ├── Sidebar.jsx
+  │    │    ├── pages/
+  │    │    │    ├── Login/
+  │    │    │    │    ├── Login.jsx
+  │    │    │    │    ├── ForgetPassword.jsx
+  │    │    │    │    ├── ChangePassword.jsx
+  │    │    │    │    ├── PasswordResetConfirmation.jsx
+  │    │    │    ├── Register/
+  │    │    │    │    ├── Register.jsx
+  │    │    │    ├── Home/
+  │    │    │    │    ├── Home.jsx
+  │    │    │    │    ├── Calendar.jsx
+  │    │    │    ├── Projects/
+  │    │    │    │    ├── Project.jsx
+  │    │    │    │    ├── CreateProjectModal.jsx
+  │    │    │    │    ├── ProjectWorkspace.jsx
+  │    │    │    │    ├── ProjectTimeline.jsx
+  │    │    │    │    ├── ExistingCycleTemplates.jsx
+  │    │    │    ├── Cycles/
+  │    │    │    │    ├── Cycle.jsx
+  │    │    │    │    ├── CreateCycleModal.jsx
+  │    │    │    │    ├── CycleWorkspace.jsx
+  │    │    │    │    ├── Activity.jsx
+  │    │    │    │    ├── CreateActivityModal.jsx
+  │    │    │    │    ├── SetReminderModal.jsx
+  │    │    │    │    ├── ActivityManagement.jsx
+  │    │    │    │    ├── CreateTaskModal.jsx
+  │    │    ├── styles/
+  │    │    │    ├── components/
+  │    │    │    │    ├── Sidebar.module.css
+  │    │    │    ├── Login/
+  │    │    │    │    ├── Login.module.css
+  │    │    │    │    ├── ForgetPassword.module.css
+  │    │    │    │    ├── ChangePassword.module.css
+  │    │    │    │    ├── PasswordResetConfirmation.module.css
+  │    │    │    ├── Register/
+  │    │    │    │    ├── Register.module.css
+  │    │    │    ├── Home/
+  │    │    │    │    ├── Home.module.css
+  │    │    │    │    ├── Calendar.module.css
+  │    │    │    ├── Projects/
+  │    │    │    │    ├── Project.module.css
+  │    │    │    │    ├── CreateProjectModal.module.css
+  │    │    │    │    ├── ProjectWorkspace.module.css
+  │    │    │    │    ├── ProjectTimeline.module.css
+  │    │    │    │    ├── ExistingCycleTemplates.module.css
+  │    │    │    ├── Cycles/
+  │    │    │    │    ├── Cycle.module.css
+  │    │    │    │    ├── CreateCycleModal.module.css
+  │    │    │    │    ├── CycleWorkspace.module.css
+  │    │    │    │    ├── Activity.module.css
+  │    │    │    │    ├── CreateActivityModal.module.css
+  │    │    │    │    ├── SetReminderModal.module.css
+  │    │    │    │    ├── CreateTaskModal.module.css
+  │    │    ├── routes/
+  │    │    │    ├── routes.jsx
+  │    ├── package.json
+  │    ├── package-lock.json
+  │    ├── tailwind.congif.js
+  │    ├── postcss.config.js
+  │    ├── vite.config.js
+  │    ├── .gitignore
+  │    ├── eslint.config.js
+  │    ├── index.html
+  ├── Backend/
+  │    ├── Database/
+  │    │    ├── models/
+  │    │    │    ├── user_models.py
+  │    │    │    ├── project_models.py
+  │    │    │    ├── cycle_models.py
+  │    │    │    ├── activity_models.py
+  │    │    │    ├── task_models.py
+  │    │    │    ├── tag_models.py
+  │    │    │    ├── reminder_models.py
+  │    │    │    ├── __init__.py
+  │    │    ├── models.py
+  │    │    ├── project_cycle_mapping_models.py
+  │    │    ├── tag_mapping_models.py
+  │    │    ├── reminder_mapping_models.py
+  │    ├── routes/
+  │    │    ├── routes.py
+  │    │    ├── cycle.py
+  │    │    ├── activity.py
+  │    │    ├── reminder.py
+  │    │    ├── reminderMapping.py
+  │    │    ├── task.py
+  │    │    ├── project.py
+  │    │    ├── projectCycleMapping.py
+  │    │    ├── tag.py
+  │    │    ├── tagMapping.py
+  │    │    ├── user.py
+  │    │    ├── auth.py
+  │    ├── config.py
+  │    ├── app.py
+  │    ├── requirements.txt
+  │    ├── .env
+  │    ├── Dockerfile
+  │    ├── migrations/
+  ├── README.md

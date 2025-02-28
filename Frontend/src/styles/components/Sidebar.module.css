@@ -1,0 +1,40 @@
+.sidebar {
+  width: 200px;
+  background: lightgrey;
+  padding: 20px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+}
+
+.navList li {
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.navList li a {
+  text-decoration: none;
+  color: black;
+  display: block;
+}
+
+.navList li a:hover {
+  background: darkgrey;
+}
+
+.active {
+  background: pink;
+  font-weight: bold;
+}

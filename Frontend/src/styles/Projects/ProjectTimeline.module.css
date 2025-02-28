@@ -1,0 +1,45 @@
+.timeline {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f4f4f4;
+  border-radius: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  overflow-x: auto;
+}
+
+/* Logical Start Indicator */
+.logicalStart {
+  font-weight: bold;
+  color: red;
+}
+
+.startIndicator {
+  width: 5px;
+  height: 30px;
+  background: red;
+}
+
+/* Cycle Block in Timeline */
+.cycleBlock {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  color: white;
+  text-align: center;
+  min-width: 100px;
+  cursor: grab;
+  transition: transform 0.2s ease-in-out;
+}
+
+.cycleBlock:hover {
+  transform: scale(1.1);
+}
+
+/* Dragging Effect */
+.cycleBlock.dragging {
+  opacity: 0.5;
+  background: #d0d0d0;
+  border: 2px dashed black;
+}

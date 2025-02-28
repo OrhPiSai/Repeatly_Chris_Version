@@ -1,0 +1,5 @@
+-- Create Tag Table
+CREATE TABLE "Tag" (
+    "TagID" SERIAL PRIMARY KEY,  -- Unique identifier for tags
+    "TagName" TEXT NOT NULL      -- Name of the tag
+);

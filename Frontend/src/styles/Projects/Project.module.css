@@ -1,0 +1,88 @@
+.container {
+  display: flex;
+  height: 100vh;
+  background-color: white;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 200px;
+  background: #e0e0e0;
+  padding: 20px;
+}
+
+/* Main Content */
+.content {
+  flex-grow: 1;
+  padding: 20px;
+  margin-left: 200px;
+}
+
+/* Actions (Search + Create Button) */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.searchInput {
+  padding: 8px;
+  width: 300px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+/* Create Button */
+.createButton {
+  background-color: orange;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.createButton:hover {
+  background-color: darkorange;
+}
+
+/* Table Styles */
+.tableContainer {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.projectTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.projectTable th, .projectTable td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: left;
+}
+
+.projectTable th {
+  background-color: lightgray;
+}
+
+.emptyMessage {
+  text-align: center;
+  padding: 20px;
+  color: gray;
+}
+
+/* Cycle Dragging Styles */
+.dragging {
+  opacity: 0.5;
+  background: lightblue;
+  border: 2px dashed black;
+}
+
+/* Drop area highlight */
+.dropTarget {
+  background: #d0f0d0;
+  border: 2px dashed green;
+}

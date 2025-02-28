@@ -1,0 +1,36 @@
+version: "3.8"
+
+services:
+  backend:
+    build: ./Backend  # Ensure it points to the Backend folder
+    container_name: repeatly_backend
+    ports:
+      - "5000:5000"
+    depends_on:
+      db:
+        condition: service_healthy  # Ensures DB is ready before backend starts
+    environment:
+      - DATABASE_URL=${DATABASE_URL}  # Uses DATABASE_URL from .env
+    env_file:
+      - ./Backend/.env  # Load environment variables from Backend/.env file
+    restart: always
+
+  db:
+    image: postgres:16
+    container_name: repeatly_db
+    restart: always
+    environment:
+      - POSTGRES_USER=repeatlydb_user
+      - POSTGRES_PASSWORD=YU6oP3Am00yJD6LvHjv9E1o3o7TgJ5pU
+      - POSTGRES_DB=repeatlydb
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:  # Ensures database is ready before backend starts
+      test: ["CMD", "pg_isready", "-U", "repeatlydb_user"]
+      interval: 5s
+      retries: 5
+
+volumes:
+  postgres_data:

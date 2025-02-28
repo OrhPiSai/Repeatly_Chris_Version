@@ -1,0 +1,24 @@
+-- Create the "Cycle" table
+CREATE TABLE "Cycle" (
+    "CycleID" SERIAL PRIMARY KEY,                      -- Unique identifier for cycles
+    "CName" TEXT NOT NULL,                             -- Cycle name (Required)
+    "CDescription" TEXT,                               -- Description of the cycle (Nullable)
+    "CDuration" INTEGER NOT NULL,                      -- Duration of cycle in days (Required)
+    "CreatedAt" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,   -- Timestamp when the cycle was created
+    "UpdatedAt" TIMESTAMP DEFAULT CURRENT_TIMESTAMP    -- Initial timestamp for the last update
+);
+
+-- Create trigger function to auto-update the "UpdatedAt" column on row modification
+CREATE OR REPLACE FUNCTION update_cycle_updated_at_column()
+RETURNS TRIGGER AS $$
+BEGIN
+    NEW."UpdatedAt" = CURRENT_TIMESTAMP;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Attach the trigger function to the "Cycle" table so it updates "UpdatedAt" on each update
+CREATE TRIGGER set_cycle_timestamp
+BEFORE UPDATE ON "Cycle"
+FOR EACH ROW
+EXECUTE FUNCTION update_cycle_updated_at_column();

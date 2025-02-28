@@ -1,0 +1,24 @@
+/* Define custom fonts */
+@font-face {
+  font-family: "Avenir";
+  src: url("/fonts/Avenir-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("/fonts/Avenir-Heavy.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Apply Avenir as the default font */
+body {
+  font-family: "Avenir", sans-serif;
+  background-color: white;
+  color: black;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

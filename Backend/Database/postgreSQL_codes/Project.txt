@@ -1,0 +1,26 @@
+-- Create the "Project" table
+CREATE TABLE "Project" (
+    "ProjectID" SERIAL PRIMARY KEY,                      -- Unique identifier for projects
+    "UserID" INTEGER NOT NULL,                           -- Project owner
+    "PName" TEXT NOT NULL,                               -- Project name
+    "PDescription" TEXT,                                 -- Description of the project (Nullable)
+    "LogicalStartDate" TIMESTAMP NOT NULL,               -- Start date for the project
+    "CreatedAt" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,     -- Timestamp when the project was created
+    "UpdatedAt" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,     -- Initial value for the last update
+    CONSTRAINT fk_project_user FOREIGN KEY ("UserID") REFERENCES "User"("UserID")
+);
+
+-- Create trigger function to auto-update the "UpdatedAt" column on row modification
+CREATE OR REPLACE FUNCTION update_project_updated_at_column()
+RETURNS TRIGGER AS $$
+BEGIN
+    NEW."UpdatedAt" = CURRENT_TIMESTAMP;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Attach the trigger function to the "Project" table so it updates "UpdatedAt" on each update
+CREATE TRIGGER set_project_timestamp
+BEFORE UPDATE ON "Project"
+FOR EACH ROW
+EXECUTE FUNCTION update_project_updated_at_column();

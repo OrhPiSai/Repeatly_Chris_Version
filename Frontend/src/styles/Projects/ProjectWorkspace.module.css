@@ -1,0 +1,68 @@
+.workspace {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Close Button */
+.closeButton {
+  float: right;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 18px;
+}
+
+/* Form Inputs */
+.projectDetails input,
+.projectDetails textarea,
+.projectDetails select {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+}
+
+/* Save Button */
+.saveButton {
+  background-color: orange;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.saveButton:hover {
+  background: darkorange;
+}
+
+/* Cycle List */
+.cycleList {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cycleItem {
+  background: #4a90e2;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: grab;
+}
+
+.cycleItem:hover {
+  transform: scale(1.05);
+}
+
+/* Dragging Effect */
+.cycleItem.dragging {
+  opacity: 0.5;
+  background: #357ab8;
+  border: 2px dashed black;
+}
